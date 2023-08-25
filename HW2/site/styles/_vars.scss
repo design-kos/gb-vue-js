@@ -1,0 +1,121 @@
+// Colors
+
+$color-primary: #292f36;
+$color-seconadry: #cda274;
+$bg-color-primary: #ffffff;
+$bg-color-seconadry: #f4f0ec;
+$color-border-primary: #e7e7e7;
+
+// Spacing
+
+$spacer-base: 4px;
+
+$spacers: (
+    "0": 0,
+    1: $spacer-base,
+    2: $spacer-base * 2,
+    3: $spacer-base * 3,
+    4: $spacer-base * 4,
+    5: $spacer-base * 5,
+    6: $spacer-base * 6,
+    7: $spacer-base * 7,
+    8: $spacer-base * 8,
+    9: $spacer-base * 9,
+    10: $spacer-base * 10,
+    11: $spacer-base * 11,
+    12: $spacer-base * 12,
+    13: $spacer-base * 13,
+    14: $spacer-base * 14,
+    15: $spacer-base * 15,
+    16: $spacer-base * 16,
+    17: $spacer-base * 17,
+    18: $spacer-base * 18,
+    19: $spacer-base * 19,
+    20: $spacer-base * 20,
+    21: $spacer-base * 21,
+    22: $spacer-base * 22,
+    23: $spacer-base * 23,
+    24: $spacer-base * 24,
+    25: $spacer-base * 25,
+    26: $spacer-base * 26,
+    27: $spacer-base * 27,
+    28: $spacer-base * 28,
+    29: $spacer-base * 29,
+    30: $spacer-base * 30,
+    31: $spacer-base * 31,
+    32: $spacer-base * 32,
+    33: $spacer-base * 33,
+    34: $spacer-base * 34,
+    35: $spacer-base * 35,
+    36: $spacer-base * 36,
+    37: $spacer-base * 37,
+    38: $spacer-base * 38,
+    39: $spacer-base * 39,
+    40: $spacer-base * 40,
+    41: $spacer-base * 41,
+    42: $spacer-base * 42,
+    43: $spacer-base * 43,
+    44: $spacer-base * 44,
+    45: $spacer-base * 45,
+    46: $spacer-base * 46,
+    47: $spacer-base * 47,
+    48: $spacer-base * 48,
+    49: $spacer-base * 49,
+    50: $spacer-base * 50,
+);
+
+$types: (
+    "m": "margin",
+    "p": "padding",
+);
+
+$sides: (
+    "": "",
+    t: "-top",
+    r: "-right",
+    b: "-bottom",
+    l: "-left",
+);
+
+@each $key-spacer, $factor in $spacers {
+    @each $key-type, $type in $types {
+        @each $key-side, $side in $sides {
+            .#{$key-type}#{$key-side}_#{$key-spacer} {
+                #{$type}#{$side}: $factor;
+            }
+        }
+
+        .#{$key-type}h_#{$key-spacer} {
+            #{$type}-left: $factor;
+            #{$type}-right: $factor;
+        }
+
+        .#{$key-type}v_#{$key-spacer} {
+            #{$type}-bottom: $factor;
+            #{$type}-top: $factor;
+        }
+    }
+
+    .c-gap_#{$key-spacer} {
+        gap: $factor;
+    }
+
+    .r-gap_#{$key-spacer} {
+        gap: $factor;
+    }
+}
+
+// Text styles
+
+$font-title: "DM Serif Display", serif;
+$color-title: $color-primary;
+$font-text: "Jost", sans-serif;
+$color-text: #4d5053;
+
+// Button styles
+
+$height-bth: 75px;
+$border-radius-bth: 18px;
+$bg-color-btn: $color-primary;
+$bg-color-btn-hover: $color-seconadry;
+$color-btn: #ffffff;
