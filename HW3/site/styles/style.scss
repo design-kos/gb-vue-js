@@ -288,10 +288,9 @@ a {
 .blog {
     &__wrapper {
         @include flex();
-        justify-content: space-between;
-        -ms-flex-pack: justify;
         flex-wrap: wrap;
         -ms-flex-wrap: wrap;
+        column-gap: $spacer-base * 6;
         row-gap: $spacer-base * 6;
     }
 
