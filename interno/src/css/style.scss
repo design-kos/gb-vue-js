@@ -1,0 +1,42 @@
+@import "vars.scss";
+@import "mixins.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+}
+
+a {
+    @include transition-linear_02();
+    text-decoration: unset;
+}
+
+.container {
+    @include container();
+}
+
+.text-align {
+    &_center {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &_left {
+        text-align: left;
+        margin-right: auto;
+    }
+    &_right {
+        text-align: right;
+        margin-left: auto;
+    }
+}
+
+.btn {
+    @include btn-primary();
+}

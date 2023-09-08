@@ -1,0 +1,240 @@
+@import "vars.scss";
+
+// Container
+
+@mixin container {
+    width: 100%;
+    max-width: calc(1200px + $spacer-base * 6 * 2);
+    padding-left: calc($spacer-base * 6);
+    padding-right: calc($spacer-base * 6);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Blocks
+
+@mixin flex() {
+    display: flex;
+    display: -ms-flexbox;
+}
+
+@mixin flex-centered_all() {
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    -ms-flex-align: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+}
+
+@mixin flex-centered_vertical() {
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+}
+
+@mixin flex-centered_horizontal() {
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    -ms-flex-pack: center;
+}
+
+@mixin grid() {
+    display: grid;
+    display: -ms-grid;
+}
+
+// Texts
+
+@mixin title-key() {
+    color: $color-title;
+    font-family: $font-title;
+    font-size: 85px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-transform: capitalize;
+}
+
+@mixin title-cover() {
+    color: $color-title;
+    font-family: $font-title;
+    font-size: 65px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-transform: capitalize;
+}
+
+@mixin title-h1() {
+    color: $color-title;
+    font-family: $font-title;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+}
+
+@mixin title-h2() {
+    color: $color-title;
+    font-family: $font-title;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+}
+
+@mixin title-h3() {
+    color: $color-title;
+    font-family: $font-title;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+}
+
+@mixin title-h4() {
+    color: $color-title;
+    font-family: $font-title;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+}
+
+@mixin title-h5() {
+    color: $color-title;
+    font-family: $font-title;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+}
+
+@mixin title-h6() {
+    color: $color-title;
+    font-family: $font-title;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+}
+
+@mixin text-l() {
+    color: $color-text;
+    font-family: $font-text;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+}
+
+@mixin text-m() {
+    color: $color-text;
+    font-family: $font-text;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+}
+
+@mixin text-s() {
+    color: $color-text;
+    font-family: $font-text;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+}
+
+@mixin text-xs() {
+    color: $color-text;
+    font-family: $font-text;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+}
+
+@mixin text-nav() {
+    @include transition-linear_02();
+    color: $color-title;
+    font-family: $font-text;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.25;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+@mixin text-bold() {
+    font-weight: 700;
+}
+
+@mixin text-italic() {
+    font-style: italic;
+}
+
+// Buttons
+
+@mixin btn-primary() {
+    @include transition-linear_02();
+    @include flex-centered_all();
+    width: auto;
+    height: $height-bth;
+    border-radius: $border-radius-bth;
+    background-color: $bg-color-btn;
+    padding-left: $spacer-base * 14;
+    padding-right: $spacer-base * 14;
+    border: none;
+    box-shadow: 0px 10px 20px 0px rgba(192, 192, 192, 0.35);
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(192, 192, 192, 0.35);
+
+    &-text {
+        @include transition-linear_02();
+        @include flex-centered_all();
+        color: $color-btn;
+        font-family: $font-text;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.25;
+        letter-spacing: 0.02em;
+        text-transform: capitalize;
+    }
+
+    &-text::after {
+        @include transition-linear_02();
+        content: "";
+        display: block;
+        width: 16px;
+        height: 14px;
+        margin-top: -2px;
+        margin-left: $spacer-base * 2;
+        background-image: url(../assets/arrow-btn-default.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &:hover {
+        background-color: $bg-color-btn-hover;
+    }
+
+    &:hover &-text::after {
+        background-image: url(../assets/arrow-btn-hover.svg);
+    }
+}
+
+// Animation
+
+@mixin transition-linear_02() {
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+}
